@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2D vector - Prototype</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="log"></div>
+	<script type="text/javascript">
+
+	Vector = function (x, y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	Vector.prototype = {
+	
+		magnitude: function() {
+			var m = Math.sqrt((this.x * this.x) + (this.y * this.y));
+			return m;
+		},
+	
+		length: function(){
+			var len = this.magnitude();
+			return len;
+		},
+		
+		normalize: function(){
+			var temp = this.magnitude();
+			this.x = this.x/temp;
+			this.y = this.y/temp;
+		},
+		
+		add: function(v){
+			return new Vector(this.x + v.x, this.y + v.y);
+		}
+	};
+	
+	var v1 = new Vector(4, 5);
+	var v2 = new Vector(8, 2);
+	
+	// check for addition errors
+	try {
+        var v3 = v1.add(v2);
+    }
+    catch (error) {
+        console.log("Vector add error: ", error.message);
+    }
+	
+	// check for normalization errors
+	if(v3!=null)
+		len = v3.length();
+	try {
+		v2.normalize();
+	}
+	catch (e) {
+		console.log("Vector normalization error: ", e.message);
+    }
+
+	// check the correctness of the length of v2
+	try {
+		lenV2 = v2.length();
+	}
+	catch (ea) {
+		console.log("Error in Length of v2: ", ea.message);
+	}
+	
+	//format and output to html
+	var logSt = "<p>";
+	logSt +="v1.x() = " + v1.x + "<br>";
+	logSt +="v1.y() = " + v1.y + "<br>";
+	logSt +="v2.x().toFixed(3) = " + v2.x.toFixed(3) + "<br>";
+	logSt +="v2.y().toFixed(3) = " + v2.y.toFixed(3) + "<br>";
+	logSt +="v2.length() = " + lenV2 + "<br>";
+	logSt +="v3.x() = " + v3.x + "<br>";
+	logSt +="v3.y() =" + v3.y + "<br>";
+	logSt +="len.toFixed(3) = " + len.toFixed(3) + "<br>";
+	
+	logSt += "</p>";
+	
+	$(document).ready(function () {
+			$(".log").html(logSt);
+	});
+	</script>
+</body>
+</html>
