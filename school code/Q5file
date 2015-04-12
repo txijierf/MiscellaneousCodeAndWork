@@ -1,0 +1,14 @@
+#!/bin/sh
+x=$1
+numbersfile=$2
+smallest=10000
+largest=01
+
+if [ x=0 ];then
+  for i in $2;do
+    if [ test $i -lt $smallest ];then
+      smallest=$i
+    fi
+  done
+  echo $smallest
+fi

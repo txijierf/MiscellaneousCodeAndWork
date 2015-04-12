@@ -1,0 +1,10 @@
+#!/bin/sh
+while [ $# -gt 0 ]
+do
+  while [ 1 -lt $# ]
+  do
+    shift
+  done
+  echo $1
+  shift
+done

@@ -1,0 +1,13 @@
+#!/bin/sh
+x=$1
+echo $x $1 $*
+echo `$x $1 $*`
+echo '$x $1 $*'
+echo "$x $1 $*"
+echo $#
+shift
+echo $x $1 $*
+echo `$x $1 $*`
+echo '$x $1 $*'
+echo "$x $1 $*"
+echo $#

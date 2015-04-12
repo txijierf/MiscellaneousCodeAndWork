@@ -1,0 +1,16 @@
+Clab8 Questions
+1)3 (b)
+2)4 (b)
+3)4 3 (a)
+4)random garbage (d)
+5)1 (a)
+6)The ASCII number for the letter 'a' (c)
+7)random garbage (d)
+8)won't run (c)
+9)4 4 (c)
+10)random garbage (d)
+11)5(b)
+12)random garbage (d)
+13)65(a)
+14)4 4(c)
+

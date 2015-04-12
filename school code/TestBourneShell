@@ -1,0 +1,12 @@
+#!/bin/sh
+x=$1
+shift
+while [ $# -gt 0 ]; do
+  echo $1
+  if [ $1 -gt $X ]; then
+    x=$1
+    echo $X
+  fi
+  shift
+done
+echo $X

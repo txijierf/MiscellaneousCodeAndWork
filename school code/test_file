@@ -1,0 +1,6 @@
+#!/bin/sh
+x='5'
+x="expr $x + 10"
+echo $x
+echo $#
+
